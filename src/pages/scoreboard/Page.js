@@ -27,15 +27,15 @@ const Page = (props) => {
   const updatePlayer = (number, faults) => {
     const updatedPlayers = [...players];
     const index = updatedPlayers.findIndex(player => player.number == number);
-    if (index > 0) {
+    if (index >= 0) {
       updatedPlayers[index].faults = faults;
       setPlayers(updatedPlayers);
     }
   };
 
-  const infoHandler = number => {
+  const infoHandler = (number) => {
     const index = players.findIndex(player => player.number == number);
-    if (index >= -0) {
+    if (index >= 0) {
       setInfo(players[index]);
     }
   };
